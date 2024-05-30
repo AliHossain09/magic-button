@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+
+    --greadian-color: linear-gradient(90deg,
+            hsl(48, 100%, 50%) 0%,
+            hsl(28, 100%, 54%, 100%));
+    --Black-color: hsl(225, 15%, 6%);
+    --bangla-color: hsla(48, 30%, 95%, .3);
+    --body-color: hsl(48, 100%, 98%);
+    --front-size: 1rem;
+}
+
+/* button styles */
+
+body {
+    font-size: var(--front-size);
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn-container {
+    height: 100vh;
+    margin-inline: 1.5rem;
+    display: grid;
+    place-items: center;
+}
+
+.button {
+    position: relative;
+    transition: transform .4s;
+}
+
+.button-content {
+    position: relative;
+    background: var(--greadian-color);
+    padding: 1.25rem 3rem;
+    border-radius: 4rem;
+    border: 3px solid var(--Black-color);
+    color: var(--Black-color);
+    display: flex;
+    align-items: center;
+    column-gap: 5rem;
+    overflow: hidden;
+}
+
+.button-text {
+    font-weight: 700;
+    text-align: center;
+}
+
+.button__icon {
+    font-size: 1rem;
+}
+
+.button-text,
+.button__icon {
+    position: relative;
+    z-index: 2;
+}
+
+.button-reflection-1,
+.button-reflection-2 {
+    width: 8px;
+    height: 120px;
+    background-color: var(--bangla-color);
+    rotate: 30deg;
+    position: absolute;
+    inset: 0;
+    top: 0;
+    left: -180%;
+    margin: auto;
+    transition: left .6s cubic-bezier(.2, .5, .2, 1.2);
+}
+
+.button-reflection-1::after {
+    content: '';
+    width: 26px;
+    height: 100%;
+    background-color: var(--bangla-color);
+    position: absolute;
+    top: -1rem;
+    left: 1.25rem;
+}
+
+.button-reflection-2::after {
+    content: '';
+    width: 40px;
+    height: 100%;
+    background-color: var(--bangla-color);
+    position: absolute;
+    top: -1rem;
+    left: .8rem;
+}
+
+.button img {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .5s opacity .5s;
+
+}
+
+.button-star-1 {
+    width: 20px;
+    top: -14px;
+    left: -16px;
+    transform: rotate(48deg) scale(.1);
+
+}
+
+.button-star-2 {
+    width: 40px;
+    right: -10px;
+    top: -4px;
+    transform: rotate(48deg) scale(.1);
+}
+
+.button-circle-1,
+.button-circle-2 {
+    width: 8px;
+}
+
+.button-circle-1 {
+    top: -8px;
+    left: 58px;
+    transform: scale(.1);
+}
+
+.button-circle-2 {
+    right: 34px;
+    bottom: -8px;
+    transform: scale(.1);
+}
+
+.button-diamond {
+    width: 18px;
+    top: -20px;
+    right: 62px;
+    transform: rotate(48deg) scale(.1);
+}
+
+.button-rectangle {
+    width: 30px;
+    left: 9px;
+    bottom: -18px;
+    transform: rotate(-48deg) scale(.1);
+}
+
+.btn-shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--greadian-color);
+    border-radius: 4rem;
+    border: 3px solid var(--Black-color);
+    z-index: -1;
+    transition: transform .3s;
+}
+
+.button:hover .btn-shadow {
+    transform: translate(-.5rem, .5rem);
+}
+
+.button:hover .button-reflection-1 {
+    left: 120%;
+}
+
+.button:hover .button-reflection-2 {
+    left: -70%;
+}
+
+.button:hover {
+    transform: rotate(-4deg) scale(1.1);
+}
+
+.button:hover img {
+    opacity: 1;
+}
+
+.button:hover .button-star-1 {
+    transform: rotate(-48deg) scale(1.1);
+    transition-delay: .1s;
+}
+
+.button:hover .button-star-2 {
+    transform: rotate(-48deg) scale(1.1);
+
+}
+
+.button:hover .button-circle-1 {
+    transform: translateY(-8px) rotate(-48deg) scale(1.1);
+    transition-delay: .1s;
+}
+
+.button:hover .button-circle-2 {
+    transform: translate(15px, 15px) rotate(-48deg) scale(1.1);
+
+}
+
+.button:hover .button-diamond {
+    transform: translateY(7px) rotate(-28deg) scale(1.1);
+
+}
+
+.button:hover .button-rectangle {
+    transform: rotate(-12deg) scale(1.1);
+
+}
